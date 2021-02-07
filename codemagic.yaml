@@ -9,7 +9,7 @@ workflows:
             cocoapods: default
         scripts:
             - flutter build ios --debug --no-codesign
-            - xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner --verbose
+            - xcode-project build-ipa --verbose --workspace ios/Runner.xcworkspace --scheme Runner 
         artifacts:
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
