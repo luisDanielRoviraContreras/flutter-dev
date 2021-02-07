@@ -8,7 +8,7 @@ workflows:
             xcode: latest
             cocoapods: default
         scripts:
-            - flutter build ios --debug --no-codesign --release
+            - flutter build ios --debug --no-codesign
             - xcode-project use-profiles
             - xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner
         artifacts:
