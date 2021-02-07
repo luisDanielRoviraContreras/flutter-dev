@@ -10,7 +10,7 @@ workflows:
         scripts:
             - flutter build ios --debug --no-codesign
             - xcode-project use-profiles
-            - xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner
+            - xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
         artifacts:
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
