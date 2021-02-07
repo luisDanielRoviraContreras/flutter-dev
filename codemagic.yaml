@@ -11,9 +11,8 @@ workflows:
             xcode: latest
             cocoapods: default
         scripts:
-            - name: Build for iOS     
-                script: flutter build ios
-            - xcodebuild build -workspace "$XCODE_WORKSPACE.xcworkspace" -scheme "$XCODE_SCHEME" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+            - flutter build ios --debug --no-codesign
+            - xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner
         artifacts:
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
